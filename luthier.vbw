@@ -1,5 +1,4 @@
-Form1 = 182, 182, 1079, 608, C, 26, 26, 923, 452, C
-clsClienteDTO = 52, 52, 949, 480, 
-clsServicoDTO = 78, 78, 975, 504, 
-clsInstrumentoDTO = 104, 104, 1001, 530, 
-clsOsDTO = -151, 110, 939, 526, Z
+clsInstrumentoDTO = 0, 0, 0, 0, C
+clsOsDTO = 0, 0, 0, 0, C
+clsServicoDTO = 0, 0, 0, 0, C
+clsClienteDTO = 0, 0, 0, 0, C
