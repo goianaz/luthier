@@ -65,3 +65,26 @@ Public Function Excluir(ByVal vCodigo As Long) As Long
 End Function
 
 
+Public Function Alterar(ByVal vShippers As clsShippersDTO) As Boolean
+
+    Dim strSQL           As String
+    Dim clsConexao       As clsConexao
+    
+    clsConexao.ProvedorTipo = OleDb
+    clsConexao.ConexaoString = CONEXAO_ACESSO
+    
+    
+    strSQL = "         UPDATE shippers "
+    strSQL = strSQL & "   SET CompanyName = '" & vShippers.CompanyName & "'"
+    strSQL = strSQL & "     , Phone = '" & vShippers.Phone & "'"
+    strSQL = strSQL & " WHERE ShipperID = " & vShippers.ShipperID
+
+    Call clsConexao.Abrir
+    Call clsConexao.ExecuteNonQuery(strSQL)
+    Call clsConexao.Fechar
+    
+    Alterar = True
+
+    Set clsConexao = Nothing
+
+End Function
