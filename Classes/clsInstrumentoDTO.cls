@@ -16,7 +16,7 @@ Option Explicit
 Private m_lngCodigo As Long
 Private m_strNome As String
 Private m_strModelo As String
-Private m_strMarca as Long
+Private m_strMarca As Long
 
 Public Property Get Codigo() As Long
 
@@ -57,12 +57,6 @@ End Property
 Public Property Get Marca() As String
 
     Marca = m_strMarca
-
-End Property
-
-Public Property Let Marca(ByVal strMarca As String)
-
-    m_strMarca = strMarca
 
 End Property
 

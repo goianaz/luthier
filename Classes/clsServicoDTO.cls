@@ -49,6 +49,6 @@ End Property
 
 Public Property Let Valor(ByVal curValor As Currency)
 
-    m_cValor = curValor
+    m_curValor = curValor
 
 End Property

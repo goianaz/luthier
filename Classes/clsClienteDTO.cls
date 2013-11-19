@@ -32,7 +32,7 @@ End Property
 
 Public Property Let Codigo(ByVal lngCodigo As Long)
 
-    m_lCodigo = lngCodigo
+    m_lngCodigo = lngCodigo
 
 End Property
 
@@ -50,7 +50,7 @@ End Property
 
 Public Property Get Endereco() As String
 
-    strEndereco = m_strEndereco
+    Endereco = m_strEndereco
 
 End Property
 
@@ -68,7 +68,7 @@ End Property
 
 Public Property Let Nro(ByVal strNro As String)
 
-    m_sNro = strNro
+    m_strNro = strNro
 
 End Property
 
@@ -80,7 +80,7 @@ End Property
 
 Public Property Let Cidade(ByVal strCidade As String)
 
-    m_sCidade = strCidade
+    m_strCidade = strCidade
 
 End Property
 
@@ -92,7 +92,7 @@ End Property
 
 Public Property Let Bairro(ByVal strBairro As String)
 
-    m_sBairro = strBairro
+    m_strBairro = strBairro
 
 End Property
 

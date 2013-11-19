@@ -28,7 +28,7 @@ Public Property Get Codigo() As Long
 
 End Property
 
-Public Property Get CodCLiente() As Integer
+Public Property Get CodCLiente() As Long
 
     CodCLiente = m_lngCodCLiente
     
@@ -37,7 +37,7 @@ End Property
 
 Public Property Let CodCLiente(ByVal lngCodCLiente As Long)
 
-    m_lCodCLiente = lngCodCLiente
+    m_lngCodCLiente = lngCodCLiente
 
 End Property
 
@@ -78,7 +78,7 @@ Public Property Get CodServico() As Long
 
 End Property
 
-Public Property Let CodServico(ByVal lCodServico As Long)
+Public Property Let CodServico(ByVal lngCodServico As Long)
 
     m_lngCodServico = lngCodServico
 
@@ -90,7 +90,7 @@ Public Property Get CodInstrumento() As Long
 
 End Property
 
-Public Property Let CodInstrumento(ByVal lCodInstrumento As Long)
+Public Property Let CodInstrumento(ByVal lngCodInstrumento As Long)
 
     m_lngCodInstrumento = lngCodInstrumento
 
