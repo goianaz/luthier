@@ -42,8 +42,10 @@ Public Function Excluir(ByVal vCodigo As Long) As Long
     strSQL = "DELETE FROM instrumento WHERER codigo = " & vCodigo
     clsConexao.ProvedorTipo = OleDb
     clsConexao.ConexaoString = CONEXAO_ACESSO
+    
     Call clsConexao.Abrir
     Excluir = clsConexao.ExecuteNonQuery(strSQL)
+    
     Call clsConexao.Fechar
     Set clsConexao = Nothing
 
