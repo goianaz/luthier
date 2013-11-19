@@ -19,6 +19,7 @@ Module=modLuthier; Modulos\modLuthier.bas
 Class=clsInstrumentoDAO; Classes\clsInstrumentoDAO.cls
 Class=clsServicoDAO; Classes\clsServicoDAO.cls
 Class=clsOSDAO; Classes\clsOSDAO.cls
+Class=clsShippersDAO; Classes\Exemplos\clsShippersDAO.cls
 Startup="frmCadCliente"
 HelpFile=""
 Command32=""

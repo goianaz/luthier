@@ -44,14 +44,14 @@ Public Function Incluir(ByVal vShippers As clsShippersDTO) As Boolean
 
 End Function
 
-Public Funciton Excluir(byval vCodigo as long) as long
+Public Function Excluir(ByVal vCodigo As Long) As Long
 
-	Dim strSQL as String
-	Dim clsConexao       As clsConexao
-	
-	strSQL = "DELETE FROM shippers WHERER ShipperID = " & vCodigo
-	
-	clsConexao.ProvedorTipo = OleDb
+        Dim strSQL As String
+        Dim clsConexao       As clsConexao
+        
+        strSQL = "DELETE FROM shippers WHERER ShipperID = " & vCodigo
+        
+        clsConexao.ProvedorTipo = OleDb
     clsConexao.ConexaoString = CONEXAO_ACESSO
 
     Call clsConexao.Abrir
@@ -62,6 +62,6 @@ Public Funciton Excluir(byval vCodigo as long) as long
 
     Set clsConexao = Nothing
 
-end function
+End Function
 
 

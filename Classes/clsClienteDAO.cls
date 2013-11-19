@@ -16,7 +16,7 @@ Option Explicit
 Public Function Incluir(ByVal vCliente As clsClienteDTO) As Boolean
 
     Dim strSQL           As String
-    Dim clsconexao       As clsconexao
+    Dim clsConexao       As clsConexao
 
     strSQL = "           INSERT INTO cliente ( codigo "
     strSQL = strSQL & "                      , nome "
@@ -40,12 +40,27 @@ Public Function Incluir(ByVal vCliente As clsClienteDTO) As Boolean
     strSQL = strSQL & "                      , '" & vCliente.Email & "'"
     strSQL = strSQL & "                      )"
 
-    Set clsconexao = New clsconexao
-    clsconexao.ProvedorTipo = OleDb
-    clsconexao.ConexaoString = CONEXAO_ACESSO
-    Call clsconexao.Abrir
-    Call clsconexao.ExecuteNonQuery(strSQL)
-    Call clsconexao.Fechar
+    Set clsConexao = New clsConexao
+    clsConexao.ProvedorTipo = OleDb
+    clsConexao.ConexaoString = CONEXAO_ACESSO
+    Call clsConexao.Abrir
+    Call clsConexao.ExecuteNonQuery(strSQL)
+    Call clsConexao.Fechar
     Incluir = True
-    Set clsconexao = Nothing
+    Set clsConexao = Nothing
 End Function
+Public Function Excluir(ByVal vCodigo As Long) As Long
+
+    Dim strSQL           As String
+    Dim clsConexao       As clsConexao
+
+    strSQL = "DELETE FROM cliente WHERER codigo = " & vCodigo
+    clsConexao.ProvedorTipo = OleDb
+    clsConexao.ConexaoString = CONEXAO_ACESSO
+    Call clsConexao.Abrir
+    Excluir = clsConexao.ExecuteNonQuery(strSQL)
+    Call clsConexao.Fechar
+    Set clsConexao = Nothing
+
+End Function
+

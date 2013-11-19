@@ -15,7 +15,7 @@ Option Explicit
 
 Public Function Incluir(ByVal vInstrumento As clsInstrumentoDTO) As Boolean
     Dim strSQL           As String
-    Dim clsconexao       As clsconexao
+    Dim clsConexao       As clsConexao
 
     strSQL = "               INSERT INTO instrumento ( codigo "
     strSQL = strSQL & "                              , nome"
@@ -27,10 +27,24 @@ Public Function Incluir(ByVal vInstrumento As clsInstrumentoDTO) As Boolean
     strSQL = strSQL & "                              , '" & vInstrumento.Marca & "'"
     strSQL = strSQL & "                              )"
 
-    Set clsconexao = New clsconexao
-    clsconexao.ProvedorTipo = OleDb
-    clsconexao.ConexaoString = CONEXAO_ACESSO
-    Call clsconexao.Abrir
-    Call clsconexao.ExecuteNonQuery(strSQL)
+    Set clsConexao = New clsConexao
+    clsConexao.ProvedorTipo = OleDb
+    clsConexao.ConexaoString = CONEXAO_ACESSO
+    Call clsConexao.Abrir
+    Call clsConexao.ExecuteNonQuery(strSQL)
 End Function
 
+Public Function Excluir(ByVal vCodigo As Long) As Long
+
+    Dim strSQL           As String
+    Dim clsConexao       As clsConexao
+
+    strSQL = "DELETE FROM instrumento WHERER codigo = " & vCodigo
+    clsConexao.ProvedorTipo = OleDb
+    clsConexao.ConexaoString = CONEXAO_ACESSO
+    Call clsConexao.Abrir
+    Excluir = clsConexao.ExecuteNonQuery(strSQL)
+    Call clsConexao.Fechar
+    Set clsConexao = Nothing
+
+End Function

@@ -15,7 +15,7 @@ Option Explicit
 
 Public Function Incluir(ByVal vOS As clsOsDTO) As Boolean
     Dim srtSQL           As String
-    Dim clsconexao       As clsconexao
+    Dim clsConexao       As clsConexao
 
     strSQL = "               INSERT INTO os( codigo"
     strSQL = "                             , data"
@@ -31,10 +31,24 @@ Public Function Incluir(ByVal vOS As clsOsDTO) As Boolean
     strSQL = strSQL & "                    , " & vOS.CodInstrumento & ""
     strSQL = strSQL & "                    )"
 
-    Set clsconexao = New clsconexao
-    clsconexao.ProvedorTipo = OleDb
-    clsconexao.ConexaoString = CONEXAO_ACESSO
-    Call clsconexao.Abrir
-    Call clsconexao.ExecuteNonQuery(strSQL)
+    Set clsConexao = New clsConexao
+    clsConexao.ProvedorTipo = OleDb
+    clsConexao.ConexaoString = CONEXAO_ACESSO
+    Call clsConexao.Abrir
+    Call clsConexao.ExecuteNonQuery(strSQL)
 End Function
 
+Public Function Excluir(ByVal vCodigo As Long) As Long
+
+    Dim strSQL           As String
+    Dim clsConexao       As clsConexao
+
+    strSQL = "DELETE FROM os WHERER codigo = " & vCodigo
+    clsConexao.ProvedorTipo = OleDb
+    clsConexao.ConexaoString = CONEXAO_ACESSO
+    Call clsConexao.Abrir
+    Excluir = clsConexao.ExecuteNonQuery(strSQL)
+    Call clsConexao.Fechar
+    Set clsConexao = Nothing
+
+End Function
