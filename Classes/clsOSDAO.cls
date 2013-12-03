@@ -61,3 +61,29 @@ Public Function Excluir(ByVal vCodigo As Long) As Long
     Set clsConexao = Nothing
 
 End Function
+Public Function Alterar(ByVal vCodigo As Long) As Boolean
+
+    Dim strSQL           As String
+    Dim clsConexao       As clsConexao
+    
+    clsConexao.ProvedorTipo = OleDb
+    clsConexao.ConexaoString = CONEXAO_ACESSO
+    
+    
+    strSQL = "         UPDATE os "
+    strSQL = strSQL & "   SET data = '" & vOS.Data & "'"
+    strSQL = strSQL & "     , dataentrega = '" & vOS.DataEntrega & "'"
+    strSQL = strSQL & "     , codcliente = '" & vOS.CodCLiente & "'"
+    strSQL = strSQL & "     , codservico = '" & vOS.CodServico & "'"
+    strSQL = strSQL & "     , codinstrumento = '" & vOS.CodInstrumento & "'"
+    strSQL = strSQL & " WHERE codigo = " & vOS.Codigo
+
+    Call clsConexao.Abrir
+    Call clsConexao.ExecuteNonQuery(strSQL)
+    Call clsConexao.Fechar
+    
+    Alterar = True
+
+    Set clsConexao = Nothing
+
+End Function
