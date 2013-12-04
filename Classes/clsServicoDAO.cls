@@ -21,7 +21,7 @@ Public Function Incluir(ByVal vServico As clsServicoDTO) As Boolean
     strSQL = "                                 INSERT INTO servico ( codigo "
     strSQL = strSQL & "                                            , nome"
     strSQL = strSQL & "                                            , valor"
-    strSQL = strSQL & "                                ) VALUE     (  " & vServico.Codigo
+    strSQL = strSQL & "                                ) VALUE     (  " & vServico.codigo
     strSQL = strSQL & "                                            , '" & vServico.Nome & "'"
     strSQL = strSQL & "                                            , " & vServico.Valor & ""
     strSQL = strSQL & "                                            )"
@@ -57,7 +57,7 @@ Public Function Excluir(ByVal vCodigo As Long) As Long
     Set clsConexao = Nothing
 
 End Function
-Public Function Alterar(ByVal vCodigo As Long) As Boolean
+Public Function Alterar(ByVal vServico As clsServicoDTO) As Boolean
 
     Dim strSQL           As String
     Dim clsConexao       As clsConexao
@@ -69,7 +69,7 @@ Public Function Alterar(ByVal vCodigo As Long) As Boolean
     strSQL = "         UPDATE servico "
     strSQL = strSQL & "   SET nome = '" & vServico.Nome & "'"
     strSQL = strSQL & "     , valor = '" & vServico.Valor & "'"
-    strSQL = strSQL & " WHERE codigo = " & vServico.Codigo
+    strSQL = strSQL & " WHERE codigo = " & vServico.codigo
 
     Call clsConexao.Abrir
     Call clsConexao.ExecuteNonQuery(strSQL)

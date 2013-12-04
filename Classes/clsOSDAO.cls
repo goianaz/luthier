@@ -24,7 +24,7 @@ Public Function Incluir(ByVal vOS As clsOsDTO) As Boolean
     strSQL = "                             , codcliente"
     strSQL = "                             , codservico"
     strSQL = "                             , codinstrumento"
-    strSQL = "                   VALUE)    ( " & vOS.Codigo
+    strSQL = "                   VALUE)    ( " & vOS.codigo
     strSQL = strSQL & "                    , " & vOS.Data & ""
     strSQL = strSQL & "                    , " & vOS.DataEntrega & ""
     strSQL = strSQL & "                    , " & vOS.CodCLiente & ""
@@ -61,7 +61,7 @@ Public Function Excluir(ByVal vCodigo As Long) As Long
     Set clsConexao = Nothing
 
 End Function
-Public Function Alterar(ByVal vCodigo As Long) As Boolean
+Public Function Alterar(ByVal vOS As clsOsDTO) As Boolean
 
     Dim strSQL           As String
     Dim clsConexao       As clsConexao
@@ -76,7 +76,7 @@ Public Function Alterar(ByVal vCodigo As Long) As Boolean
     strSQL = strSQL & "     , codcliente = '" & vOS.CodCLiente & "'"
     strSQL = strSQL & "     , codservico = '" & vOS.CodServico & "'"
     strSQL = strSQL & "     , codinstrumento = '" & vOS.CodInstrumento & "'"
-    strSQL = strSQL & " WHERE codigo = " & vOS.Codigo
+    strSQL = strSQL & " WHERE codigo = " & vOS.codigo
 
     Call clsConexao.Abrir
     Call clsConexao.ExecuteNonQuery(strSQL)

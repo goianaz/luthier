@@ -28,7 +28,7 @@ Public Function Incluir(ByVal vCliente As clsClienteDTO) As Boolean
     strSQL = strSQL & "                      , fonecel"
     strSQL = strSQL & "                      , fonefixo"
     strSQL = strSQL & "                      , email "
-    strSQL = strSQL & "             ) VALUE  (  " & vCliente.Codigo
+    strSQL = strSQL & "             ) VALUE  (  " & vCliente.codigo
     strSQL = strSQL & "                      , '" & vCliente.Nome & "'"
     strSQL = strSQL & "                      , '" & vCliente.Endereco & "'"
     strSQL = strSQL & "                      , '" & vCliente.Nro & "'"
@@ -62,6 +62,36 @@ Public Function Excluir(ByVal vCodigo As Long) As Long
     Excluir = clsConexao.ExecuteNonQuery(strSQL)
     Call clsConexao.Fechar
     
+    Set clsConexao = Nothing
+
+End Function
+Public Function Alterar(ByVal vCliente As clsClienteDTO) As Boolean
+
+    Dim strSQL           As String
+    Dim clsConexao       As clsConexao
+    
+    clsConexao.ProvedorTipo = OleDb
+    clsConexao.ConexaoString = CONEXAO_ACESSO
+    
+    
+    strSQL = "         UPDATE cliente "
+    strSQL = strSQL & "   SET nome = '" & vCliente.Nome & "'"
+    strSQL = strSQL & "                      , '" & vCliente.Endereco & "'"
+    strSQL = strSQL & "                      , '" & vCliente.Nro & "'"
+    strSQL = strSQL & "                      , '" & vCliente.Cidade & "'"
+    strSQL = strSQL & "                      , '" & vCliente.Bairro & "'"
+    strSQL = strSQL & "                      , '" & vCliente.Uf & "'"
+    strSQL = strSQL & "                      , '" & vCliente.Fonecel & "'"
+    strSQL = strSQL & "                      , '" & vCliente.Fonefixo & "'"
+    strSQL = strSQL & "                      , '" & vCliente.Email & "'"
+    strSQL = strSQL & " WHERE codigo = " & vCliente.codigo
+
+    Call clsConexao.Abrir
+    Call clsConexao.ExecuteNonQuery(strSQL)
+    Call clsConexao.Fechar
+    
+    Alterar = True
+
     Set clsConexao = Nothing
 
 End Function

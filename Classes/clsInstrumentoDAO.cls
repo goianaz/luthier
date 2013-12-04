@@ -21,7 +21,7 @@ Public Function Incluir(ByVal vInstrumento As clsInstrumentoDTO) As Boolean
     strSQL = strSQL & "                              , nome"
     strSQL = strSQL & "                              , modelo"
     strSQL = strSQL & "                              , marca"
-    strSQL = strSQL & "                  ) VALUE     (  " & vInstrumento.Codigo
+    strSQL = strSQL & "                  ) VALUE     (  " & vInstrumento.codigo
     strSQL = strSQL & "                              , '" & vInstrumento.Nome & "'"
     strSQL = strSQL & "                              , '" & vInstrumento.Modelo & "'"
     strSQL = strSQL & "                              , '" & vInstrumento.Marca & "'"
@@ -50,7 +50,7 @@ Public Function Excluir(ByVal vCodigo As Long) As Long
     Set clsConexao = Nothing
 
 End Function
-Public Function Alterar(ByVal vCodigo As Long) As Boolean
+Public Function Alterar(ByVal vInstrumento As clsInstrumentoDTO) As Boolean
 
     Dim strSQL           As String
     Dim clsConexao       As clsConexao
@@ -63,7 +63,7 @@ Public Function Alterar(ByVal vCodigo As Long) As Boolean
     strSQL = strSQL & "   SET nome = '" & vInstrumento.Nome & "'"
     strSQL = strSQL & "     , modelo = '" & vInstrumento.Modelo & "'"
     strSQL = strSQL & "     , marca = '" & vInstrumento.Marca & "'"
-    strSQL = strSQL & " WHERE codigo = " & vInstrumento.Codigo
+    strSQL = strSQL & " WHERE codigo = " & vInstrumento.codigo
 
     Call clsConexao.Abrir
     Call clsConexao.ExecuteNonQuery(strSQL)
