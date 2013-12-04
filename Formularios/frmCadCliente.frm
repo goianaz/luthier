@@ -1,15 +1,31 @@
 VERSION 5.00
 Begin VB.Form frmCadCliente 
    Caption         =   "Cadastro de Clientes"
-   ClientHeight    =   4425
+   ClientHeight    =   4755
    ClientLeft      =   120
    ClientTop       =   450
    ClientWidth     =   7920
    Icon            =   "frmCadCliente.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   4425
+   ScaleHeight     =   4755
    ScaleWidth      =   7920
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton cmdCancelar 
+      Caption         =   "&Cancelar"
+      Height          =   495
+      Left            =   2880
+      TabIndex        =   21
+      Top             =   3600
+      Width           =   1215
+   End
+   Begin VB.CommandButton cmdOk 
+      Caption         =   "&Ok"
+      Height          =   495
+      Left            =   1320
+      TabIndex        =   20
+      Top             =   3600
+      Width           =   1215
+   End
    Begin VB.TextBox txtEmail 
       Height          =   285
       Left            =   1080

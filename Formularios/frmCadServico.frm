@@ -10,6 +10,22 @@ Begin VB.Form frmCadServico
    ScaleHeight     =   1980
    ScaleWidth      =   4560
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton cmdCancelar 
+      Caption         =   "&Cancelar"
+      Height          =   495
+      Left            =   2160
+      TabIndex        =   7
+      Top             =   1200
+      Width           =   1215
+   End
+   Begin VB.CommandButton cmdOk 
+      Caption         =   "&Ok"
+      Height          =   495
+      Left            =   840
+      TabIndex        =   6
+      Top             =   1200
+      Width           =   1215
+   End
    Begin VB.TextBox txtValor 
       Height          =   285
       Left            =   720
