@@ -10,22 +10,6 @@ Begin VB.Form frmCadInstrumento
    ScaleHeight     =   2745
    ScaleWidth      =   5835
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton cmdCancelar 
-      Caption         =   "&Cancelar"
-      Height          =   495
-      Left            =   2640
-      TabIndex        =   9
-      Top             =   1800
-      Width           =   1215
-   End
-   Begin VB.CommandButton cmdOk 
-      Caption         =   "&Ok"
-      Height          =   495
-      Left            =   1200
-      TabIndex        =   8
-      Top             =   1800
-      Width           =   1215
-   End
    Begin VB.TextBox txtMarca 
       Height          =   285
       Left            =   840
