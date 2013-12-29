@@ -10,6 +10,22 @@ Begin VB.Form frmCadCliente
    ScaleHeight     =   4425
    ScaleWidth      =   7920
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton cmdCancelar 
+      Caption         =   "&Cancelar"
+      Height          =   375
+      Left            =   2640
+      TabIndex        =   21
+      Top             =   3720
+      Width           =   1215
+   End
+   Begin VB.CommandButton cmdSalvar 
+      Caption         =   "&Salvar"
+      Height          =   375
+      Left            =   1320
+      TabIndex        =   20
+      Top             =   3720
+      Width           =   1215
+   End
    Begin VB.TextBox txtEmail 
       Height          =   285
       Left            =   1080
