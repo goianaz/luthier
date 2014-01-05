@@ -16,5 +16,5 @@ modLuthier = 200, 200, 640, 821,
 clsInstrumentoDAO = 69, 44, 902, 681, C
 clsServicoDAO = 149, 48, 1527, 685, 
 clsOSDAO = 208, 115, 1586, 752, 
-clsShippersDAO = 46, -3, 1424, 634, 
-clsShippersDTO = 78, 78, 968, 494, 
+clsShippersDAO = -150, -17, 1228, 620, 
+clsShippersDTO = 11, 89, 901, 505, 
