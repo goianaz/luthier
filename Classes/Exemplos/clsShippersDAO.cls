@@ -19,13 +19,13 @@ Public Function Incluir(ByVal vShippers As clsShippersDTO) As Boolean
     Dim strSQL           As String
     Dim clsConexao       As clsConexao
 
-    strSQL = "          INSERT INTO shippers ( ShipperID "
-    strSQL = strSQL & "                      , CompanyName "
+    strSQL = "          INSERT INTO shippers ( " 'ShipperID "
+    strSQL = strSQL & "                       CompanyName "
     strSQL = strSQL & "                      , Phone "
-    strSQL = strSQL & "              ) VALUE (  " & vShippers.ShipperID
-    strSQL = strSQL & "                      , '" & vShippers.CompanyName & "'"
-    strSQL = strSQL & "                      , '" & vShippers.Phone & "'"
-    strSQL = strSQL & "                      ) "
+    strSQL = strSQL & "              ) VALUES ( " '" & vShippers.ShipperID
+    strSQL = strSQL & "                         '" & vShippers.CompanyName & "'"
+    strSQL = strSQL & "                       , '" & vShippers.Phone & "'"
+    strSQL = strSQL & "                       ) "
 
     Set clsConexao = New clsConexao
 
